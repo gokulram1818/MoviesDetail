@@ -1,0 +1,84 @@
+.posterImage {
+  height: 80vh;
+}
+.description{
+  width: 500px;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-align: justify;
+}
+.release_date{
+  font-size: 30px;
+  color: #fff; 
+  font-weight: 600;
+}
+.poster-card{
+    width: 270px;
+    height: 300px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+.poster_card_div{
+  transition: transform 0.4s ease;
+  border-radius: 5px;
+}
+
+  .poster-card:hover{
+  transform: translateY(-18px);
+  border-radius: 10px;
+  }
+
+.top-rated{
+    max-width: 100%;
+    row-gap: 10px;
+}
+.slick-prev,.slick-next {
+  z-index: 10;
+}
+.slick-slide{
+    margin: 0 15px;
+}
+.slick-prev {
+  left: 10px;  
+}
+
+.slick-next {
+  right: 10px;
+}
+@media (max-width: 992px) {
+  .posterImage {
+    height: 70vh;
+  }
+
+.posterImage_overlay h2 {
+    font-size: 2rem;
+  }
+
+  .posterImage_overlay p {
+    font-size: 0.9rem;
+    width: 90% ;
+  }
+}
+
+@media (max-width: 576px) {
+  .posterImage {
+    height: 60vh;
+  }
+
+  .posterImage_overlay {
+    padding: 1rem ;
+  }
+
+  .posterImage_overlay h2 {
+    font-size: 1.3rem;
+  }
+
+  .posterImage_overlay .fs-5 {
+    font-size: 0.9rem;
+  }
+
+  .posterImage_overlay .description {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+}

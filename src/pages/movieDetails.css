@@ -1,0 +1,24 @@
+.backdrop_div {
+  position: relative;   
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backdrop {
+  height: 100%;   
+  width: 100%;
+  object-fit: cover;  
+}
+.poster_div{
+    position: absolute;
+    top:45%;
+}
+
+.poster {
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
