@@ -12,24 +12,25 @@ function Home() {
   const[TopRated,setTopRated]=useState([])
   const[PopularSeries,setPopularSeries]=useState([])
   const[TopTv,setTopTv]=useState([])
+  const API_KEY = import.meta.env.VITE_API_KEY
 
   useEffect(() => {
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=74d1441879935853e509d09572e6f471")
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
       .then((data) => data.json())
       .then((M) => setPopularMovies(M.results))
   }, [])
   useEffect(()=>{
-    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=74d1441879935853e509d09572e6f471")
+    fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`)
     .then((res)=>res.json())
     .then((tr)=>setTopRated(tr.results))
 },[])
   useEffect(()=>{
-    fetch("https://api.themoviedb.org/3/tv/popular?api_key=74d1441879935853e509d09572e6f471")
+    fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`)
     .then((res)=>res.json())
     .then((tv)=>setPopularSeries(tv.results))
   },[])
   useEffect(()=>{
-    fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=74d1441879935853e509d09572e6f471")
+    fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}`)
     .then((res)=>res.json())
     .then((data)=>setTopTv(data.results))
   },[])

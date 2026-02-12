@@ -8,19 +8,20 @@ function Movies() {
   const[PopularMovies,setPopularMovies]=useState([])
   const[SearchMovie,setSearchMovie]=useState([])
   const[Query,setQuerry]=useState("")
+  const API_KEY = import.meta.env.VITE_API_KEY
   useEffect(()=>{
-    fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=74d1441879935853e509d09572e6f471")
+    fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`)
     .then((res)=>res.json())
     .then((data)=>setPopularMovies(data.results))
 
   },[])
   useEffect(() => {
     if (!Query.trim()) {
-      fetch("https://api.themoviedb.org/3/movie/popular?api_key=74d1441879935853e509d09572e6f471")
+      fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
       .then((res) => res.json())
       .then((data) => setSearchMovie(data.results))
     } else {
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=74d1441879935853e509d09572e6f471&query=${Query}`)
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${Query}`)
         .then((res) => res.json())
         .then((data) => setSearchMovie(data.results))
     }

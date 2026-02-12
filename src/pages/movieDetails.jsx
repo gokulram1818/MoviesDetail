@@ -6,16 +6,17 @@ function Details() {
   const { type, id }=useParams()
   const [Data, setData]=useState({})
   const[imdb_id,setImdb_id]=useState(null)
+  const API_KEY = import.meta.env.VITE_API_KEY
 
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=74d1441879935853e509d09572e6f471`)
+    fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}`)
       .then((res) => res.json())
       .then((d) => setData(d))
   }, [type, id]) 
   useEffect(()=>{
     if(type==="tv"){
-    fetch(`https://api.themoviedb.org/3/tv/${id}/external_ids?api_key=74d1441879935853e509d09572e6f471`)
+    fetch(`https://api.themoviedb.org/3/tv/${id}/external_ids?api_key=${API_KEY}`)
     .then((res)=>res.json())
     .then((data)=>setImdb_id(data.imdb_id))
     }
