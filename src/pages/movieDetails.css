@@ -4,7 +4,9 @@
   width: 100%;
   overflow: hidden;
 }
-
+.movie-detail{
+  margin-top: 80px !important; 
+}
 .backdrop {
   height: 100%;   
   width: 100%;

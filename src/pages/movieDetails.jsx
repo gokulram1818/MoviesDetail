@@ -42,7 +42,7 @@ function Details() {
     }
   }
   return (
-    <div className=" container mt-5">
+    <div className=" movie-detail container mt-5">
         <div className="">
             <div className="backdrop_div ">
            <img className=" backdrop" src={`https://image.tmdb.org/t/p/original${Data.backdrop_path}`} alt="" />
